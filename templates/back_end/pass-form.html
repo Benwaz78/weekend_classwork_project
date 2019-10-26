@@ -1,0 +1,23 @@
+{% extends 'back_end/base.html' %}
+<!Doctype html>
+{% load static %}
+{% block title %}
+{{ user.first_name }} | {{ user.last_name }}
+{% endblock %}
+
+{% block content %}
+<h1>Change Password</h1>
+{% if messages %}
+	    {% for message in messages %}
+	   		<div class="success">{{ message }}</div>
+	    {% endfor %}
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    <table>
+            {{ pass_key.as_table }}
+    </table>
+    <input type="submit" value="Password">
+</form>
+{% endblock %}

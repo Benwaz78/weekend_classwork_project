@@ -1,0 +1,22 @@
+{% extends 'classwork_app/base.html' %}
+{% load static %}
+<!Doctype html>
+{% block title %}
+ {{ post_detail_key.post_title }}
+{% endblock %}
+
+{% block content %}
+		
+		<div class="users-content">
+			<div class="column-section">
+                <h2>{{ post_detail_key.post_title }}</h2>
+                <img src="{{ post_detail_key.post_img.url }}" alt="">
+                <p>
+                    {{ post_detail_key.post_title }}
+                </p>
+				
+			</div>
+			{% include 'classwork_app/sidebar.html' %}
+		</div>
+
+{% endblock %}

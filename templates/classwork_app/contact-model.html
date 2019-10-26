@@ -1,0 +1,42 @@
+{% extends 'classwork_app/base.html' %}
+{% load static %}
+<!Doctype html>
+{% block title %}
+Users
+{% endblock %}
+
+{% block content %}
+<h1>Contact Us Model</h1>
+		
+		<div class="contact-content">
+			<div class="column-section">
+				<div class="contact-column">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3417326683184!2d3.342225314266832!3d6.604387324051198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d7c33eb87b3%3A0xfc23c9556f669273!2sAlabian%20Solutions%20Limited!5e0!3m2!1sen!2sng!4v1566980150990!5m2!1sen!2sng" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+				</div>
+				<!-- END OF MAP CONTENT -->
+				<div class="contact-column">
+					<form method="post" enctype="multipart/form-data">
+						{% for field in contact_us_key %}
+						<div class="form-group">
+							<div class="danger">
+                                {{ field.errors }}
+                            </div>
+							{{ field.label_tag }} {{ field }}
+							{% if field.help_text %}
+							<p class="help">{{ field.help_text|safe }}</p>
+							{% endif %}
+						</div>
+						{% endfor %}
+					{% csrf_token%}
+					<input type="submit" value="Submit">
+					</form>
+				</div>
+				<!-- END OF FORM CONTENT -->
+			</div>
+			<!-- END OF COLUMN SECTION -->
+			{% include 'classwork_app/sidebar.html' %}
+
+			
+		</div>
+
+{% endblock %}

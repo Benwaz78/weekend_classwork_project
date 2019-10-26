@@ -1,0 +1,34 @@
+{% extends 'back_end/base.html' %}
+<!Doctype html>
+{% load static %}
+{% block title %}
+{{ user.first_name }} | {{ user.last_name }}
+{% endblock %}
+
+{% block content %}
+<h1>View Post</h1>
+<table width='650' border='1'>
+    <tr>
+        <th>Post Title</th>
+        <th>Post Image</th>
+        <th>Post Content</th>
+        <th>Post Date</th>
+        <th colspan="2">Action</th>
+    </tr>
+{% if display_post %}
+{% for post in display_post %}
+<tr>
+    <td><a href="{% url 'back_end:show_detail_post' post.pk %}">{{ post.post_title }}</a></td>
+    <td><img src="{{ post.post_img.url }}" alt="" width="60" height="60"></td>
+    <td>{{ post.content }}</td>
+    <td>{{ post.create_date }}</td>
+    <td><a href="{% url 'back_end:edit_post' post.pk %}">Edit</a></td>
+    <td><a href="{% url 'back_end:del_post' post.pk %}">Delete</a></td>
+</tr>
+{% endfor %}
+{% endif %}
+</table>
+
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{% static 'back_end/css/admin.css' %}">
+  <title>
+    {% block title %}
+    {% endblock %}
+  </title>
+</head>
+<body>
+  <div id="wrapper">
+    <aside>
+      <div class="inner-div">
+        <h3>LOGO</h3>
+      </div>
+      <ul>
+        <li><a href="{% url 'back_end:add_post' %}">Add Post</a></li>
+        <li><a href="{% url 'back_end:show_post' %}">View Post</a></li>
+        <li><a href="{% url 'back_end:view_profile' %}">View Profile</a></li>
+        <li><a href="{% url 'back_end:edit_user' %}">Edit Profile</a></li>
+        <li><a href="{% url 'back_end:pass_form' %}">Change Password</a></li>
+        <li><a href="{% url 'back_end:logout' %}">Logout</a></li>
+      </ul>
+    </aside>
+    <div id="main">
+      <header>
+        
+      </header>
+      <section>
+          {% block content %}
+          {% endblock %}
+      </section>
+    </div>
+
+
+  </div>
+
+</body>
+</html>

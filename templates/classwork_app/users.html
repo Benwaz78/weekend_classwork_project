@@ -1,0 +1,38 @@
+{% extends 'classwork_app/base.html' %}
+{% load static %}
+<!Doctype html>
+{% block title %}
+Users
+{% endblock %}
+
+{% block content %}
+<h1>Users</h1>
+		
+		<div class="users-content">
+			<div class="column-section">
+				<table class="table">
+					<tr>
+						<th>Firstname</th>
+						<th>Lastname</th>
+						<th>Email</th>
+					</tr>
+					{% if user_key %}
+						{% for key in user_key %}
+
+						<tr>
+							<td>{{ key.first_name }}</td>
+							<td>{{ key.last_name}}</td>
+							<td>{{ key.email }}</td>
+						</tr>
+
+						{% endfor %}
+
+					{% endif %}
+					
+				</table>
+				
+			</div>
+			{% include 'classwork_app/sidebar.html' %}
+		</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        {% block title%}
+
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'classwork_app/css/style.css' %}">
+</head>
+<body>
+
+    <a href="{% url 'index' %}">Home</a>&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'about' %}">About</a>&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'classwork_app:blog_list' %}">Blog List</a>&nbsp;&nbsp;&nbsp;
+    <a href="#">Dummy Link</a>&nbsp;&nbsp;&nbsp;
+    {% block content %}
+
+    {% endblock %}
+
+   
+    <script src="{% static 'classwork_app/js/script.js' %}"></script>
+</body>
+</html>

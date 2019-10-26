@@ -1,0 +1,14 @@
+{% extends 'classwork_app/base.html' %}
+{% load static %}
+<!Doctype html>
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<h1>{{ heading }}</h1>
+<img src="{% static 'classwork_app/images/aisha.jpg' %}" alt="">
+
+<p>{{ content }}</p>
+{% endblock %}

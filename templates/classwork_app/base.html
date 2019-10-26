@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+        {% block title %}
+        {% endblock %}
+    </title>
+	<link rel="stylesheet" type="text/css" href="{% static 'classwork_app/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'classwork_app/css/style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+            {% url 'index' as home  %}
+            {% url 'about' as about  %}
+            {% url 'classwork_app:service' as service  %}
+            {% url 'classwork_app:users' as users  %}
+            {% url 'classwork_app:basic_form' as basic  %}
+            {% url 'classwork_app:contact_form' as contact  %}
+            {% url 'classwork_app:contact_us_form' as contactUs  %}
+            {% url 'classwork_app:register' as reg  %}
+            {% url 'classwork_app:login' as log  %}
+            <a {% if request.path == home %} class="active" {% endif %} href="{% url 'index' %}">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a {% if request.path == about %} class="active" {% endif %} href="{% url 'about' %}">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a {% if request.path == users %} class="active" {% endif %} href="{% url 'classwork_app:users' %}">Users</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a {% if request.path == service %} class="active" {% endif %} href="{% url 'classwork_app:service' %}">Services</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a {% if request.path == basic %} class="active" {% endif %} href="{% url 'classwork_app:basic_form' %}">Basic Form</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a {% if request.path == contact %} class="active" {% endif %} href="{% url 'classwork_app:contact_form' %}">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a {% if request.path == contactUs %} class="active" {% endif %} href="{% url 'classwork_app:contact_us_form' %}">Contact Us Form</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a {% if request.path == reg %} class="active" {% endif %} href="{% url 'back_end:register' %}">Register</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a {% if request.path == log %} class="active" {% endif %} href="{% url 'back_end:login' %}">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <hr>
+            {% block content %}
+            
+            {% endblock %}
+            <footer>
+                &copy; 2019
+            </footer>
+        </div>
+             
+</body>
+

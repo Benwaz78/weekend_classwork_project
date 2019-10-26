@@ -1,0 +1,46 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper{
+  overflow: hidden;
+}
+
+header{
+  height: 60px;
+  background-color: #ddd;
+}
+aside, #main{
+  float: left;
+  min-height: 100vh;
+}
+
+aside{
+  width: 20%;
+  box-sizing: border-box;
+  border-right: 2px solid #000;
+}
+
+.inner-div{
+  height: 90px;
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+
+.inner-div h3{
+  line-height: 90px;
+  text-align: center;
+
+}
+
+#main{
+  width: 80%;
+}
+
+.success{
+  background-color: green;
+  color:#fff;
+  padding: 10px;
+  display: inline-block;
+}
