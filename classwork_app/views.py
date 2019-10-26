@@ -5,7 +5,12 @@ from classwork_app.forms import BasicForm, ContactForm, ContactUsForm
 # Create your views here.
 def index(request):
     post_list = Post.objects.order_by('-create_date')
-    return render(request, 'classwork_app/index.html', {'post_key':post_list})
+    user_list = User.objects.all()
+    return render(request, 'classwork_app/index.html', 
+        {'post_key':post_list,
+        'user_key':user_list
+        }
+        )
 
 def detail(request, my_id):
     detail_post = Post.objects.get(pk=my_id)

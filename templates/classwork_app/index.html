@@ -20,6 +20,27 @@ Home
 			{% endfor %}
 
 		{% endif %}
+		<hr>
+		<table class="table">
+				<tr>
+					<th>Firstname</th>
+					<th>Lastname</th>
+					<th>Email</th>
+				</tr>
+				{% if user_key %}
+					{% for key in user_key %}
+
+					<tr>
+						<td>{{ key.first_name }}</td>
+						<td>{{ key.last_name}}</td>
+						<td>{{ key.email }}</td>
+					</tr>
+
+					{% endfor %}
+
+				{% endif %}
+				
+			</table>
 		
 		
 		
